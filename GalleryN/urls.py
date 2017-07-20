@@ -23,7 +23,7 @@ from portfolio.views import HomeLView, GalleryView, GalleryDetail
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^/$', HomeLView.as_view(), name='HomeLView'),
+    url(r'^$', HomeLView.as_view(), name='HomeLView'),
     url(r'^gallery/$', GalleryView.as_view(), name='GalleryView'),
     url(r'^gallery/(?P<slug>[-\w]+)/$', GalleryDetail.as_view(), name='detail_gallery'),
 ]

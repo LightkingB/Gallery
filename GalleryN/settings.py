@@ -70,6 +70,7 @@ WSGI_APPLICATION = 'GalleryN.wsgi.application'
 
 ALLOWED_HOSTS = [
     'salty-ocean-60737.herokuapp.com',
+    u'127.0.0.1',
 ]
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
