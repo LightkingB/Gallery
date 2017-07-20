@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load  staticfiles %}
+
+{% block content %}
+    <div class="row gallery">
+
+        <!-- left-content -->
+        <div class="col-md-9">
+            <h3 class="title">Галерея</h3>
+            <div class="row">
+
+                <div class='list-group gallery'>
+
+                    {% for g_list in gallery %}
+                        <div class="col-md-3 filter {{ g_list.category.url }}">
+
+                            <a class="thumbnail fancybox image-zoom-anim" rel="ligthbox"
+                               href="{{ g_list.image.url }}">
+                                <img class="img-responsive image" alt=""
+                                     src="{{ g_list.image.url }}"/>
+
+                            </a>
+
+                        </div>
+                        <a href="{{ g_list.get_absolute_url }}">{{ g_list.title }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- left-content -->
+        <!-- rightbar -->
+        <div class="col-md-3">
+            <div class="list-group rightbar">
+                <a class="list-group-item filter-button" data-filter="all">Все</a>
+                {% for item in category %}
+                    <a class="list-group-item filter-button" data-filter="{{ item.url }}">{{ item.name }}</a>
+                {% endfor %}
+
+                {#                <a class="list-group-item filter-button" data-filter="graphic">Графика</a>#}
+                {#                <a class="list-group-item filter-button" data-filter="webdesign">Веб дизайн</a>#}
+            </div>
+        </div>
+        <!-- rightbar -->
+
+
+    </div>
+{% endblock %}

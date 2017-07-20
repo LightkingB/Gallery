@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row">
+
+        {% if gallery.video %}
+
+        {% endif %}
+
+        {#<div style="width: 200px;">#}
+        {#    <iframe width="560" height="315" src="{{ gallery.description }}" frameborder="0" allowfullscreen></iframe>#}
+        {#</div>#}
+    </div>
+    <a href="#" id="gallery">My Slider</a>
+    <a class="swipebox-video" rel="vimeo" href="http://vimeo.com/29193046">My Videos2</a>
+    <a class="swipebox-video" rel="youtube" href="http://www.youtube.com/watch?v=hOEuCk5qZWw">My
+        Videos</a>
+    <script type="text/javascript">
+        $('#gallery').click(function (e) {
+            e.preventDefault();
+            $.swipebox([
+                {% for g in gallery.slider.all %}
+                    {href: '{{ g.slide.url }}', title: '{{ g.title }}'},
+                {% endfor %}
+            ]);
+        });
+
+    </script>
+{% endblock %}
