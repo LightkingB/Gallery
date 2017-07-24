@@ -1,20 +1,54 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block content %}
-    <div class="row">
-        <div class="col-md-7 col-md-offset-2 center">
-            <h2>Why NERO?</h2>
-            <p>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является
-                стандартной
-                "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую
-                коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.</p>
-        </div>
-        <div class="col-md-3 main-form">
-            <form>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Enter email address">
+    <div id="myCarousel" class="carousel slide carousel-fade carousel-animate carousel-bg" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+
+            <div class="item active">
+                <img src="{% static 'img/4.jpg' %}" alt="Second slide">
+                <div class="container2">
+                    <div class="carousel-caption animated zoomIn">
+                        <h2>ART3D</h2>
+                        <h3>– digital-агентство визуальных маркетинговых коммуникаций в недвижимости</h3>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
+                <div class="black"></div>
+            </div>
+
+            <div class="item ">
+                <img src="{% static 'img/slider-1.jpg' %}" alt="First slide">
+                <div class="container2">
+                    <div class="carousel-caption animated fadeInUp">
+                        <h2>Продакшн и рекламные ролики</h2>
+                        <h3>для рынков FMCG, Fashion, недвижимости и др.</h3>
+                    </div>
+                </div>
+                <div class="black"></div>
+            </div>
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+            </ol>
+
+            <div class="main-info">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <a href="#">Шоурил 2017</a>
+                        <p>13 лет компании</p>
+                    </div>
+                    <div class="col-xs-4">
+                        <a href="#">От идеи до результата</a>
+                        <p>Увеличение эффективности продаж</p>
+                    </div>
+                    <div class="col-xs-4">
+                        <a href="#">Клиенты и партнеры</a>
+                        <p>Только недвижимость</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 {% endblock %}

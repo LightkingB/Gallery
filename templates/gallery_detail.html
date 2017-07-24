@@ -1,19 +1,41 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block content %}
-    <div class="row">
+    <div class="container-fluid more" style=" background-image: url({{ gallery.image.url }});">
+        <div class="row">
 
-        {% if gallery.video %}
+            <div class="col-md-5 col-md-offset-1 text">
+                <p>{{ gallery.publish }}</p>
+                <p class="red">{{ gallery.place }}</p>
+                <h2>{{ gallery.title }}</h2>
+                <p>{{ gallery.category.name }}</p>
+                {% if gallery.link %}
+                    <a class="btn btn-danger" target="_blank" href="{{ gallery.link }}">Link.ru</a>
+                {% endif %}
+                {% if gallery.video %}
+                    <a class="swipebox-video btn btn-danger" rel="youtube" href="{{ gallery.video }}">
+                        Видео</a>
+                {% endif %}
+                {% if gallery.slider %}
+                    <a href="#" id="gallery" class="btn btn-danger">3D-визуализация</a>
+                {% endif %}
+                <div class="result-project">
+                    <p>В рамках ситемы разработаны</p>
+                    <ul>
+                        {% for g_result in gallery.results.all %}
+                            <li>{{ g_result.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <p>{{ gallery.description }}</p>
 
-        {% endif %}
+            </div>
 
-        {#<div style="width: 200px;">#}
-        {#    <iframe width="560" height="315" src="{{ gallery.description }}" frameborder="0" allowfullscreen></iframe>#}
-        {#</div>#}
+        </div>
     </div>
-    <a href="#" id="gallery">My Slider</a>
-    <a class="swipebox-video" rel="vimeo" href="http://vimeo.com/29193046">My Videos2</a>
-    <a class="swipebox-video" rel="youtube" href="http://www.youtube.com/watch?v=hOEuCk5qZWw">My
-        Videos</a>
+
+
+
     <script type="text/javascript">
         $('#gallery').click(function (e) {
             e.preventDefault();
@@ -23,6 +45,9 @@
                 {% endfor %}
             ]);
         });
-
+        $(document).ready(function () {
+            /* Video */
+            $('.swipebox-video').swipebox();
+        });
     </script>
 {% endblock %}

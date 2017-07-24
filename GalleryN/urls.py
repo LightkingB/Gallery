@@ -19,13 +19,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from GalleryN import settings
-from portfolio.views import HomeLView, GalleryView, GalleryDetail
+from portfolio.views import HomeLView, GalleryView, GalleryDetail, about, contact
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', HomeLView.as_view(), name='HomeLView'),
-    url(r'^gallery/$', GalleryView.as_view(), name='GalleryView'),
+    url(r'^$', HomeLView.as_view(), name='home'),
+    url(r'^gallery/$', GalleryView.as_view(), name='gallery'),
     url(r'^gallery/(?P<slug>[-\w]+)/$', GalleryDetail.as_view(), name='detail_gallery'),
+    url(r'^about/$', about, name='about'),
+    url(r'^contact/$', contact, name='contact'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

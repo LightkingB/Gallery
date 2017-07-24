@@ -13,6 +13,22 @@ class HomeLView(ListView):
     template_name = 'index.html'
 
 
+def about(request):
+    return render(request, "about.html", {})
+
+
+def contact(request):
+    return render(request, "contact.html", {})
+
+
+# class AboutView(ListView):
+#     template_name = 'about.html'
+#
+#
+# class ContactView(ListView):
+#     template_name = 'contact.html'
+
+
 class GalleryView(ListView):
     model = Gallery
     template_name = 'gallery.html'

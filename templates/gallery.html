@@ -2,46 +2,20 @@
 {% load  staticfiles %}
 
 {% block content %}
-    <div class="row gallery">
-
-        <!-- left-content -->
-        <div class="col-md-9">
-            <h3 class="title">Галерея</h3>
-            <div class="row">
-
-                <div class='list-group gallery'>
-
-                    {% for g_list in gallery %}
-                        <div class="col-md-3 filter {{ g_list.category.url }}">
-
-                            <a class="thumbnail fancybox image-zoom-anim" rel="ligthbox"
-                               href="{{ g_list.image.url }}">
-                                <img class="img-responsive image" alt=""
-                                     src="{{ g_list.image.url }}"/>
-
-                            </a>
-
+    <div class="container-fluid gallery">
+        <div class="row">
+            {% for g_list in gallery %}
+                <div class="col-md-3 col-sm-6 item">
+                    <a href="{{ g_list.get_absolute_url }}">
+                        <img src="{{ g_list.image.url }}" alt="#">
+                        <div class="gal-prev">
+                            <h3>{{ g_list.title }}</h3>
+                            <p>{{ g_list.category }}</p>
+                            <p class="dop">{{ g_list.place }}</p>
                         </div>
-                        <a href="{{ g_list.get_absolute_url }}">{{ g_list.title }}</a>
-                    {% endfor %}
+                    </a>
                 </div>
-            </div>
+            {% endfor %}
         </div>
-        <!-- left-content -->
-        <!-- rightbar -->
-        <div class="col-md-3">
-            <div class="list-group rightbar">
-                <a class="list-group-item filter-button" data-filter="all">Все</a>
-                {% for item in category %}
-                    <a class="list-group-item filter-button" data-filter="{{ item.url }}">{{ item.name }}</a>
-                {% endfor %}
-
-                {#                <a class="list-group-item filter-button" data-filter="graphic">Графика</a>#}
-                {#                <a class="list-group-item filter-button" data-filter="webdesign">Веб дизайн</a>#}
-            </div>
-        </div>
-        <!-- rightbar -->
-
-
     </div>
 {% endblock %}
