@@ -21,7 +21,7 @@ body{
     background-position: left;
     background-size: cover;
 }
-	.more p, .result-project ul li{
+	.more p{
 		font-size: 14px;
 	    color: #d3d3d3;
 	}
@@ -249,8 +249,39 @@ footer {
 	-moz-transform: translateY(0px);
 	transform: translateY(0px);
 }
-.result-project p{
-	font-size: 17px;
-	margin-bottom: 2px;
+
+@media only screen and (max-width : 640px) {
+
+.content-text{
+	padding-top: 80px;
 }
 
+	.carousel-caption{
+        top: 5%;
+		left: 0%;
+		right: 0%;
+    	padding: 10px 50px 20px;
+        max-width: 100%;
+        text-align: center;	
+	}
+	.carousel-caption h2{
+        font-size: 40px;
+	}
+	.carousel-caption h3{
+		font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+	}
+
+	.carousel-indicators {
+	    bottom: 130px;
+	}
+
+.main-info{
+	font-size: 12px;
+}
+	.main-info a{
+		color: #c7c7c7;
+		font-size: 16px;
+	}
+}
