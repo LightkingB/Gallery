@@ -69,7 +69,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'GalleryN.wsgi.application'
 
 ALLOWED_HOSTS = [
-    'salty-ocean-60737.herokuapp.com',
+    'ihlas.herokuapp.com',
     u'127.0.0.1',
 ]
 # Database
