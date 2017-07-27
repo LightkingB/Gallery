@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import cyrtranslit
 from django.contrib import admin
-from django.utils.text import slugify
 from transliterate import translit
 
 from portfolio.models import Category, Portfolio, Slider, Result
