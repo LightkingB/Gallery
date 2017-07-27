@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load  staticfiles %}
+
+{% block content %}
+    <div class="container-fluid gallery">
+        <div class="iso-nav">
+            <ul>
+                <li class="active" data-filter="*">Все</li>
+                {% for sort_by_category in category %}
+                    <li data-filter=".{{ sort_by_category.url }}">{{ sort_by_category.name }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="row">
+            <div class="main-iso">
+                {% for p_list in portfolio %}
+                    <div class="col-md-3 col-sm-6 item {{ p_list.category.url }}">
+                        <a href="{{ p_list.get_absolute_url }}">
+                            <img src="{{ p_list.image.url }}" alt="#">
+                            <div class="gal-prev">
+                                <h3>{{ p_list.title }}</h3>
+                                <p>{{ p_list.category.name }}</p>
+                                <p class="dop">{{ p_list.place }}</p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

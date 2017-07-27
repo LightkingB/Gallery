@@ -68,10 +68,10 @@ class Result(models.Model):
         return self.name
 
 
-class Gallery(models.Model):
+class Portfolio(models.Model):
     class Meta:
-        verbose_name = 'Галерея'
-        verbose_name_plural = 'Галерея'
+        verbose_name = 'Портфолио'
+        verbose_name_plural = 'Портфолио'
 
     title = models.CharField(max_length=150)
     publish = models.DateTimeField(auto_now_add=True)
@@ -83,13 +83,13 @@ class Gallery(models.Model):
     slug = models.SlugField(unique=True)
     image = models.ImageField(upload_to=item_upload_to)
     category = models.ForeignKey(Category)
-    slider = models.ManyToManyField(Slider)
+    slider = models.ManyToManyField(Slider, blank=True)
 
     def __unicode__(self):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('detail_gallery', args=[str(self.slug)])
+        return reverse('portfolio_detail', args=[str(self.slug)])
 
 
 class Subscribe(models.Model):

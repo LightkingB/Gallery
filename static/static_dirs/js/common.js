@@ -1,6 +1,25 @@
-$(document).ready(function(){
-	$('.carousel').carousel({
-  		interval: 2000,
-  		pause: null
-	})
+$(document).ready(function () {
+
+
+    $('.main-iso').isotope({
+        itemSelector: '.item',
+        layoutMode: 'fitRows'
+    });
+// Isotope click function
+    $('.iso-nav ul li').click(function () {
+        $('.iso-nav ul li').removeClass('active');
+        $(this).addClass('active');
+
+        var selector = $(this).attr('data-filter');
+        $('.main-iso').isotope({
+            filter: selector
+        });
+        return false;
+    });
+
+
+    $('.carousel').carousel({
+        interval: 3500,
+        pause: null
+    })
 });

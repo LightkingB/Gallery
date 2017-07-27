@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load  staticfiles %}
+
+{% block content %}
+    <div class="container-fluid content-text">
+        <h2 class="title">Клиенты и Партнеры</h2>
+        <div class="row client">
+
+            <div class="col-md-4 item">
+                <img src="{% static 'img/ihlas.png' %}" alt="Ихлас">
+                <h3>Строительная компания «Ихлас»</h3>
+            </div>
+
+            <div class="col-md-4 item">
+                <img src="{% static 'img/tsgroup.jpg' %}" alt="Ихлас">
+                <h3>Строительная компания «Ихлас»</h3>
+            </div>
+
+            <div class="col-md-4 item">
+                <img src="{% static 'img/ihlas.png' %}" alt="Ихлас">
+                <h3>Строительная компания «Ихлас»</h3>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

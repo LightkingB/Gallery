@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -9,17 +10,29 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{% url 'home' %}">LOGO</a>
+            <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}"/></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
             <ul class="nav navbar-nav cl-effect-3">
-                <li><a href="{% url 'home' %}">Главная <span class="sr-only">(current)</span></a></li>
-                <li><a href="{% url 'gallery' %}">Проекты</a></li>
-                <li><a href="{% url 'about' %}">О нас</a></li>
-                <li><a href="{% url 'contact' %}">Контакты</a></li>
+                <li><a href="{% url 'about' %}">О компании</a></li>
+                <li><a href="{% url 'portfolio' %}">Портфолио</a></li>
+                <li><a href="{% url 'client' %}">Клиенты и Партнеры</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Услуги<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="service.html">Конструктивное решения</a></li>
+
+                        <li><a href="service.html">Архитектурное решения</a></li>
+                        <li><a href="service.html">Архитектурная визуализация</a></li>
+                        <li><a href="service.html">Дизайн архитектурный среды</a></li>
+                        <li><a href="service.html">Графический дизайн, наружная реклама</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'contact' %}">Связаться с нами</a></li>
             </ul>
-        </div><!-- /.navbar-collapse -->
+        </div>
     </div><!-- /.container -->
 </nav>

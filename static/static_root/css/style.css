@@ -4,9 +4,18 @@ html {
 
 body {
     font-size: 16px;
-    background-color: #262626;
+    background-color: #151d26;
     height: 100%;
     line-height: 1.4;
+}
+
+a:hover {
+    color: #fff;
+    transition: 0.2s;
+}
+
+.orang {
+    color: #ef7f1a;
 }
 
 .right {
@@ -43,7 +52,7 @@ body {
 }
 
 .gallery {
-    padding-top: 100px;
+    padding-top: 80px;
 }
 
 .gallery .item {
@@ -71,7 +80,7 @@ body {
 }
 
 .gallery .gal-prev {
-    background-color: #000;
+    background-color: #00050c;
     padding: 10px 20px;
     height: 115px;
     overflow: hidden;
@@ -102,13 +111,56 @@ body {
     font-size: 10px;
 }
 
+.gallery .iso-nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.gallery ul li {
+    list-style: none;
+    color: #989898;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    padding: 5px 15px;
+    border: 1px solid #ef7f1a;
+    cursor: pointer;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.gallery ul li:hover, .gallery ul li.active {
+    background: #ef7f1a;
+    color: #fff;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.client .item {
+    text-align: center;
+}
+
+.client .item img {
+    height: 90px;
+    width: auto;
+}
+
+.client .item h3 {
+    font-size: 20px;
+}
+
 footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 25px;
-    background-color: #1a1a1b;
+    background-color: #091019;
     font-size: 11px;
     padding: 5px;
     color: #9a9a9a;
@@ -128,7 +180,7 @@ footer p {
 }
 
 .main-info a {
-    color: #c7c7c7;
+    color: #e8e8e8;
     font-size: 19px;
 }
 
@@ -148,9 +200,21 @@ footer p {
     transition: 0.5s;
 }
 
+@media only screen and (min-width: 640px) {
+    .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin: 0;
+    }
+
+}
+
 .navbar-default {
-    background-color: rgba(35, 35, 35, 0.66);
+    background-color: rgba(10, 24, 39, 0.57);
     border: none;
+}
+
+.navbar-default .navbar-brand img {
+    height: 100%;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -159,8 +223,38 @@ footer p {
 }
 
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
-    color: #ff5656;
+    color: #ef7f1a;
     background-color: transparent;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #f0801b;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.dropdown-menu {
+    color: #fff;
+    padding: 5px 0 5px;
+    margin: 1px 0 0;
+    font-size: 15px;
+    background-color: rgba(0, 19, 31, 0.77);
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+}
+
+.dropdown-menu > li > a {
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+    color: #ef7f1a;
+    text-decoration: none;
+    background-color: #000e17;
+    transition: 0.2s;
 }
 
 .carousel {
@@ -184,8 +278,8 @@ footer p {
 }
 
 .carousel-inner > .item > a > img, .carousel-inner > .item > img {
+    width: 100%;
     height: 100%;
-    width: auto;
     object-fit: cover;
 }
 
@@ -225,13 +319,13 @@ footer p {
 }
 
 .carousel-animate .carousel-indicators > li {
-    background-color: #ff5656;
-    border-color: #ff5656;
+    background-color: #fff;
+    border-color: #fff;
 }
 
 .carousel-animate .carousel-indicators > li.active {
-    background-color: #f99292;
-    border-color: #f99292;
+    background-color: #ffa04b;
+    border-color: #ffa04b;
 }
 
 /* 	Анимация */
@@ -270,7 +364,7 @@ footer p {
     left: 0;
     width: 100%;
     height: 3px;
-    background: #ff5656;
+    background: #ef7f1a;
     content: '';
     opacity: 0;
     -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
@@ -279,6 +373,10 @@ footer p {
     -webkit-transform: translateY(10px);
     -moz-transform: translateY(10px);
     transform: translateY(10px);
+}
+
+.cl-effect-3 .dropdown a::after {
+    height: 0;
 }
 
 .cl-effect-3 a:hover::after,
@@ -295,10 +393,16 @@ footer p {
         padding-top: 80px;
     }
 
+    .carousel-inner > .item > a > img, .carousel-inner > .item > img {
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+    }
+
     .carousel-caption {
         top: 5%;
-        left: 0;
-        right: 0;
+        left: 0%;
+        right: 0%;
         padding: 10px 50px 20px;
         max-width: 100%;
         text-align: center;
