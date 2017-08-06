@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="galleryDB" uuid="89097d0f-b62c-4c24-a7bb-4d6cd49f1af6">
-      <database-info product="SQLite" version="3.16.1" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" />
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+    <data-source name="galleryDB" uuid="9bddf9c3-4b76-46c3-8895-ec60a1669466">
       <secret-storage>master_key</secret-storage>
-      <auth-required>false</auth-required>
-      <introspection-schemas>*:main</introspection-schemas>
+      <user-name>gallery_user</user-name>
+      <introspection-scope>gallerydb:gallery_user,pg_catalog,public</introspection-scope>
+      <resolve-scope>gallerydb:gallery_user,public</resolve-scope>
     </data-source>
   </component>
 </project>

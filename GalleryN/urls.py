@@ -14,12 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from django.contrib import admin
-from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
 
 from GalleryN import settings
-from portfolio.views import HomeLView, PortfolioDetail, about, contact, PortfolioView, client
+from portfolio.views import HomeLView, PortfolioDetail, about, contact, PortfolioView, client, ServicesView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -29,6 +28,8 @@ urlpatterns = [
     url(r'^about/$', about, name='about'),
     url(r'^contact/$', contact, name='contact'),
     url(r'^clients/$', client, name='client'),
+    url(r'^services/(?P<category>[a-zA-Z0-9-]+)/$', ServicesView.as_view(), name='services_view'),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

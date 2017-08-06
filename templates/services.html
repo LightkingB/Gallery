@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load  staticfiles %}
+
+{% block content %}
+    <div class="container-fluid more" style=" background-image: url({{ services.back_image.url }});">
+        <div class="row">
+
+            <div class="col-md-5 col-md-offset-1 text">
+
+                <p>12.06.2017</p>
+                <p class="red">Услуги</p>
+                <h2>{{ services.categ_service.name }}</h2>
+                <p>{{ services.description }}</p>
+
+            </div>
+            {% if status %}
+                <div class="col-md-6 service-gallery">
+                    <div class="row">
+                        {% for adversting_image in services.image.all %}
+
+                            <div class="col-md-4 col-xs-6 item">
+                                <img src="{{ adversting_image.slide.url }}" alt="">
+                                <h4>Название</h4>
+                            </div>
+
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

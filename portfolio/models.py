@@ -102,6 +102,32 @@ class Subscribe(models.Model):
     def __unicode__(self):
         return self.email
 
+
+class ServicesCategory(models.Model):
+    class Meta:
+        verbose_name = 'Перечень услуг'
+        verbose_name_plural = 'Перечень услуг'
+
+    name = models.CharField(max_length=100)
+    filter_by_category = models.CharField(max_length=100)
+
+    def __unicode__(self):
+        return self.name
+
+
+class Services(models.Model):
+    class Meta:
+        verbose_name = 'Услуга'
+        verbose_name_plural = 'Услуги'
+
+    categ_service = models.ForeignKey(ServicesCategory)
+    back_image = models.ImageField(upload_to=item_upload_to)
+    description = models.TextField()
+    image = models.ManyToManyField(Slider, blank=True)
+
+    def __unicode__(self):
+        return self.categ_service.name
+
 # slug field - add data by form
 
 # def create_slug(instance, new_slug=None):
