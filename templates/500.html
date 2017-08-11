@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="container-fluid content-text">
+        <div class="row">
+
+            <div class="col-md-8 col-md-offset-2 text pageerr">
+                <h1>500</h1>
+                <h3>Внутренняя ошибка сервера!</h3>
+                <a href="{% url 'home' %}">Вернутся на главную страницу</a>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

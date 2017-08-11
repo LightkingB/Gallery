@@ -14,11 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from django.conf.urls import handler404, handler500
 from django.conf.urls.static import static
 from django.contrib import admin
 
 from GalleryN import settings
-from portfolio.views import HomeLView, PortfolioDetail, about, contact, PortfolioView, client, ServicesView
+from portfolio.views import HomeLView, PortfolioDetail, about, contact, PortfolioView, client, ServicesView, error_404, \
+    error_500
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -34,3 +36,6 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = error_404
+handler500 = error_500

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="container-fluid content-text">
+        <div class="row">
+
+            <div class="col-md-8 col-md-offset-2 text pageerr">
+                <h1>404</h1>
+                <h3>Извините - Страница не найдена!</h3>
+                <a href="{% url 'home' %}">Вернутся на главную страницу</a>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

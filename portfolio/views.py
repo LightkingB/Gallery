@@ -61,3 +61,11 @@ class ServicesView(ListView):
                                                 categ_service__filter_by_category__iexact=category)
         context['status'] = status
         return context
+
+
+def error_404(request):
+    return render(request, '404.html', {})
+
+
+def error_500(request):
+    return render(request, '500.html', {})
